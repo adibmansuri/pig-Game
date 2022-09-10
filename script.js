@@ -62,6 +62,8 @@ btnHold.addEventListener('click', function () {
     if (score[activePlayer] >= 10) {
       // Finish the game
       playing = false;
+      dieseel.classList.add('hidden');
+
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.add('player--winner');
