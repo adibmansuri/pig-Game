@@ -10,17 +10,28 @@ const dieseel = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
-//   (score0el.textContent = 0)
-// );
-//starting condition
-score0el.textContent = 0;
-score1el.textContent = 0;
-dieseel.classList.add('hidden');
+let score, currentScore, activePlayer, playing;
 
-const score = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-let playing = true;
+//starting condition
+
+const init = function () {
+  const score = [0, 0];
+  let currentScore = 0;
+  let activePlayer = 0;
+  let playing = true;
+
+  score0el.textContent = 0;
+  score1el.textContent = 0;
+  current0el.textContent = 0;
+  current1El.textcontent = 0;
+
+  dieseel.classList.add('hidden');
+  player0El.classList.remove('player--winner');
+  player1El.classList.remove('player--winner');
+  player1El.classList.add('player--active');
+  player1El.classList.remove('player--active');
+};
+init();
 
 const switchplayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -76,9 +87,4 @@ btnHold.addEventListener('click', function () {
     }
   }
 });
-btnNew.addEventListener('click', function () {
-  score0el.textContent = 0;
-  score1el.textContent = 0;
-  current0el.textContent = 0;
-  current1El.textcontent = 0;
-});
+btnNew.addEventListener('click', function () {});
