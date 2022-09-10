@@ -76,3 +76,9 @@ btnHold.addEventListener('click', function () {
     }
   }
 });
+btnNew.addEventListener('click', function () {
+  score0el.textContent = 0;
+  score1el.textContent = 0;
+  current0el.textContent = 0;
+  current1El.textcontent = 0;
+});
